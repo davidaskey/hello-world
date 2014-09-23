@@ -10,4 +10,7 @@ while true
   break if pat.empty?
   re = Regexp.new(pat)
   puts str.gsub(re, "#{st}\\&#{en}")
+  # Destructive style modifies str itself:
+  str.gsub!(re,"#{st}\\&#{en}")
+  puts str
 end
